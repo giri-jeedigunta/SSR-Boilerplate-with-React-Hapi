@@ -1,0 +1,35 @@
+{
+  "name": "react-ssr",
+  "version": "1.0.0",
+  "description": "React SSR Boilerplate",
+  "scripts": {
+    "dev:build:server": "webpack --config=config/webpack.server.js --watch",
+    "dev:build:client": "webpack --config=config/webpack.client.js --watch",
+    "dev:server": "nodemon --watch build --exec \"node build/bundle.js\""
+  },
+  "keywords": [],
+  "author": "Giri Jeedigunta",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/node": "^7.6.3",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "@hapi/inert": "^5.2.2",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "core-js": "3",
+    "eslint": "^6.5.1",
+    "file-loader": "^4.2.0",
+    "nodemon": "^1.19.3",
+    "webpack": "^4.41.1",
+    "webpack-cli": "^3.3.9"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.6.3",
+    "@hapi/hapi": "^18.4.0",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
+  }
+}
