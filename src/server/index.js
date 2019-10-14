@@ -1,7 +1,6 @@
-import Path from "path";
 import Hapi from "@hapi/hapi";
 import Inert from "@hapi/inert";
-import serverRender from './serverRenderer.jsx';
+import routes from './routes';
 const init = async () => {
   const server = Hapi.server({
     port: 3000,
@@ -9,26 +8,8 @@ const init = async () => {
   });
 
   await server.register(Inert);
-
-  server.route({
-    path: "/{param*}",
-    method: "GET",
-    config: {
-      handler: {
-        directory: {
-          path: Path.resolve("dist")
-        }
-      }
-    }
-  });
-
-  server.route({
-    method: "GET",
-    path: "/",
-    handler: (request, h) => {
-      return serverRender();
-    }
-  });
+  
+  await server.route(routes);
 
   await server.start();
   console.log("Server running on %s", server.info.uri);

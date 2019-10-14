@@ -3,4 +3,5 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Hello from './components/Hello.jsx';
 
-ReactDOM.hydrate(<Hello />, document.querySelector('#app'));
+//ReactDOM.hydrate(<Hello />, document.querySelector('#app'));
+ReactDOM.render(<Hello />, document.querySelector('#app'));

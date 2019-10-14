@@ -1,6 +1,6 @@
 import React from "react";
 import { renderToString } from "react-dom/server";
-import Hello from '../client/components/Hello.jsx';
+import Hello from '../../client/components/Hello.jsx';
 
 export default () => {
     const componentData = renderToString(<Hello />);
