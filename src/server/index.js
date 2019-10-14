@@ -1,30 +1,11 @@
 import Path from "path";
 import Hapi from "@hapi/hapi";
 import Inert from "@hapi/inert";
-import React from "react";
-import { renderToString } from "react-dom/server";
-import Hello from "../client/components/Hello.jsx";
-
-const componentData = renderToString(<Hello />);
-const htmlTemplate = `
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>React | SSR | HapiJS | Webpack</title>
-</head>
-<body>
-  <div id="app">${componentData}</div>
-  <script src="bundle.js"></script>
-</body>
-</html>
-`;
-
+import serverRender from './serverRenderer.jsx';
 const init = async () => {
   const server = Hapi.server({
     port: 3000,
-    host: "localhost",
-    debug: { request: ["error"] }
+    host: "localhost"
   });
 
   await server.register(Inert);
@@ -44,13 +25,8 @@ const init = async () => {
   server.route({
     method: "GET",
     path: "/",
-    options: {
-      log: {
-        collect: true
-      }
-    },
     handler: (request, h) => {
-      return htmlTemplate;
+      return serverRender();
     }
   });
 
