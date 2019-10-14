@@ -35,7 +35,7 @@ const init = async () => {
     config: {
       handler: {
         directory: {
-          path: Path.resolve("public")
+          path: Path.resolve("dist")
         }
       }
     }
