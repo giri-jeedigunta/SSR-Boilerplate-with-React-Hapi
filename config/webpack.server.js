@@ -1,7 +1,10 @@
 const path = require("path");
 const rootPath = path.resolve(__dirname, "..");
+const baseConfig = require('./webpack.base.js');
+const merge = require('webpack-merge');
+const webpackNodeExternals = require('webpack-node-externals');
 
-module.exports = {
+const serverConfig = {
   //Bundling for node JS not browser
   target: "node",
 
@@ -14,19 +17,8 @@ module.exports = {
     path: rootPath + "/build"
   },
 
-  module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        loader: "babel-loader",
-        exclude: /node_modules/
-      }
-    ]
-  },
-
-  resolve: {
-    alias: {
-      Components: rootPath + "/client/components/"
-    }
-  }
+  //Externals will inform webpack not to bundle any libraries exist inside the node_modules folder  
+  externals: [webpackNodeExternals()]
 };
+
+module.exports = merge(baseConfig, serverConfig);

@@ -19,7 +19,7 @@ const htmlTemplate = `
     <title>React | SSR | HapiJS | Webpack</title>
 </head>
 <body>
-  ${content}
+  <div id="app">${content}</div>
   <script src="bundle.js"></script>
 </body>
 </html>
