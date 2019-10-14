@@ -1,16 +1,11 @@
-"use strict";
-
 import Path from "path";
-
 import Hapi from "@hapi/hapi";
 import Inert from "@hapi/inert";
-
 import React from "react";
 import { renderToString } from "react-dom/server";
-
 import Hello from "../client/components/Hello.jsx";
 
-const content = renderToString(<Hello />);
+const componentData = renderToString(<Hello />);
 const htmlTemplate = `
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +14,7 @@ const htmlTemplate = `
     <title>React | SSR | HapiJS | Webpack</title>
 </head>
 <body>
-  <div id="app">${content}</div>
+  <div id="app">${componentData}</div>
   <script src="bundle.js"></script>
 </body>
 </html>
