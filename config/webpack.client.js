@@ -12,7 +12,10 @@ const clientConfig = {
   output: {
     filename: "bundle.js",
     path: srcPath + "/dist"
-  }
+  },
+
+  // Enables webpack to apply development settings
+  mode: 'development'  
 };
 
 module.exports = merge(baseConfig, clientConfig);

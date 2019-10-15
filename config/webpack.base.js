@@ -1,3 +1,6 @@
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+const chalk = require('chalk');
+
 module.exports = {
     module: {
         rules: [
@@ -7,5 +10,11 @@ module.exports = {
                 exclude: /node_modules/
             }
         ]
-    }
+    }, 
+    plugins: [
+        new ProgressBarPlugin({
+            format: 'Build > [:bar] ' + chalk.cyan.bold(':percent') + ' (:elapsed seconds)',
+            clear: false
+        })
+    ]
 }

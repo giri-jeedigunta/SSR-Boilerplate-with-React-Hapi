@@ -4,8 +4,8 @@
   "description": "React SSR Boilerplate",
   "scripts": {
     "dev": "npm-run-all --parallel dev:*",
-    "dev:buildServer": "webpack --config=config/webpack.server.js --watch",
-    "dev:buildClient": "webpack --config=config/webpack.client.js --watch",
+    "dev:buildServer": "webpack --config=config/webpack.server.js --watch --progress --colors",
+    "dev:buildClient": "webpack --config=config/webpack.client.js --watch --progress --colors",
     "dev:server": "nodemon --watch build --exec \"node build/server-bundle.js\""
   },
   "keywords": [],
@@ -19,10 +19,12 @@
     "@hapi/inert": "^5.2.2",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
+    "chalk": "^2.4.2",
     "core-js": "3",
     "eslint": "^6.5.1",
     "nodemon": "^1.19.3",
     "npm-run-all": "^4.1.5",
+    "progress-bar-webpack-plugin": "^1.12.1",
     "webpack": "^4.41.1",
     "webpack-cli": "^3.3.9",
     "webpack-merge": "^4.2.2",

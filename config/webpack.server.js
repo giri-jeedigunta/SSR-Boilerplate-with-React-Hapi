@@ -19,7 +19,10 @@ const serverConfig = {
   },
 
   //Externals will inform webpack not to bundle any libraries exist inside the node_modules folder  
-  externals: [webpackNodeExternals()]
+  externals: [webpackNodeExternals()], 
+
+  // Enables webpack to apply production compression / webpack settings
+  mode: 'production'
 };
 
 module.exports = merge(baseConfig, serverConfig);
