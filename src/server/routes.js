@@ -1,8 +1,9 @@
 import Path from "path";
-import serverRender from './utils/serverRenderer.jsx';
+import { renderToString } from "react-dom/server";
+import htmlTemplate from './htmlTemplate.jsx';
 
 export default [
-    // Static Files required Inert
+    // Static Files 
     {
         path: "/{param*}",
         method: "GET",
@@ -20,7 +21,7 @@ export default [
         method: "GET",
         path: "/",
         handler: (request, h) => {
-          return serverRender();
+          return "<!DOCTYPE html>"+renderToString(htmlTemplate());
         }
       }    
 ]
