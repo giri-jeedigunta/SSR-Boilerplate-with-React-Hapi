@@ -1,7 +1,5 @@
 import Path from "path";
-import { renderToString } from "react-dom/server";
-import htmlTemplate from './htmlTemplate.jsx';
-
+import reactHandler from './reactHandler';
 export default [
     // Static Files 
     {
@@ -20,8 +18,6 @@ export default [
     {
         method: "GET",
         path: "/",
-        handler: (request, h) => {
-          return "<!DOCTYPE html>"+renderToString(htmlTemplate());
-        }
+        handler: reactHandler
       }    
 ]

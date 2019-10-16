@@ -1,6 +1,6 @@
 import React from "react";
 
-const Hello = () => {
+const Home = () => {
   return (
     <>
       <h1>React-SSR Boilerplate</h1>
@@ -10,4 +10,4 @@ const Hello = () => {
   );
 };
 
-export default Hello;
+export default Home;

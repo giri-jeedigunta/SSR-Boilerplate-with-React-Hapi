@@ -1,16 +1,19 @@
 import React from "react";
-import Hello from '../client/components/Hello.jsx';
+import { StaticRouter } from 'react-router-dom';
+import Routes from '../client/routes.jsx';
 
-export default () => {
+export default req => {
     return (
         <html lang="en">
         <head>
-            <meta charset="UTF-8" />
+            <meta charSet="UTF-8" />
             <title>Boilerplate - SSR</title>
         </head>
         <body>
             <div id="app">
-                <Hello />
+                <StaticRouter location={req.path} context={{}}>
+                    <Routes />
+                </StaticRouter>
             </div>
             <script src="bundle.js"></script>
         </body>
