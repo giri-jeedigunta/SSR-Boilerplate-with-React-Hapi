@@ -12,7 +12,8 @@ const init = async () => {
   await server.route(routes);
   await server.start();
 
-  console.log("Server running on %s", server.info.uri);
+  console.log("\n SERVER up and running on... ");
+  console.dir(server.info);
 };
 
 process.on("unhandledRejection", err => {

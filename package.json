@@ -3,10 +3,15 @@
   "version": "1.0.0",
   "description": "React SSR Boilerplate",
   "scripts": {
-    "dev": "npm-run-all --parallel dev:*",
-    "dev:buildServer": "webpack --config=config/webpack.server.js --watch --progress --colors",
-    "dev:buildClient": "webpack --config=config/webpack.client.js --watch --progress --colors",
-    "dev:server": "nodemon --watch build --exec \"node build/server-bundle.js\""
+    "clean": "rimraf ./dist",
+    "start": "better-npm-run start:dev",
+    "build:dev": "webpack --config=config/webpack.config.js --watch --progress",
+    "server:dev": "nodemon --watch dist -e js --exec \"node dist/server*.js\""
+  },
+  "betterScripts": {
+    "start:dev": {
+      "command": "yarn build:dev & yarn server:dev"
+    }
   },
   "keywords": [],
   "author": "Giri Jeedigunta",
@@ -19,11 +24,12 @@
     "@hapi/inert": "^5.2.2",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
+    "better-npm-run": "^0.1.1",
     "chalk": "^2.4.2",
+    "clean-webpack-plugin": "^3.0.0",
     "core-js": "3",
     "eslint": "^6.5.1",
     "nodemon": "^1.19.3",
-    "npm-run-all": "^4.1.5",
     "progress-bar-webpack-plugin": "^1.12.1",
     "react-router-dom": "^5.1.2",
     "webpack": "^4.41.1",
@@ -34,6 +40,7 @@
   "dependencies": {
     "@babel/runtime": "^7.6.3",
     "@hapi/hapi": "^18.4.0",
+    "npm-run-all": "^4.1.5",
     "react": "^16.10.2",
     "react-dom": "^16.10.2"
   }
