@@ -1,6 +1,7 @@
 import React from "react";
 import { StaticRouter } from 'react-router-dom';
-import Routes from '../client/routes.jsx';
+import Routes from '../client/routes';
+import bodyScriptsList from './utils';
 
 export default req => {
     return (
@@ -15,7 +16,7 @@ export default req => {
                     <Routes />
                 </StaticRouter>
             </div>
-            <script src="bundle.js"></script>
+            {bodyScriptsList.map(path => path && <script key={ path } src={ path } />)}
         </body>
         </html>
     )                        

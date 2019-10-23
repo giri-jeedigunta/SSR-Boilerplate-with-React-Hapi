@@ -20,12 +20,13 @@ const baseConfig = {
     },     
 
     // Enables webpack to apply production compression / webpack settings
-    mode: 'production',
+    mode: 'development',
 
     output: {
         path: srcPath + "/dist",
         pathinfo: true,
         filename: '[name].[hash].js',
+        publicPath: '/'
     },
 
     resolve: {

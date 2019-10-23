@@ -6,6 +6,6 @@ Minimal light-weight Server Side Rendering boilerplate with ReactJS, HapiJS, Web
 ```
 yarn install
 
-yarn dev
+yarn start
 
 ```
