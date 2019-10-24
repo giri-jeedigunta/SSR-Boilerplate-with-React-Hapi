@@ -2,6 +2,7 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const chalk = require('chalk');
 const path = require("path");
 const srcPath = path.resolve(__dirname, "..");
+//const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const baseConfig = {
     module: {
@@ -19,12 +20,11 @@ const baseConfig = {
     },     
 
     // Enables webpack to apply production compression / webpack settings
-    mode: 'development',
+    mode: process.env.NODE_ENV,
 
     output: {
         path: srcPath + "/dist",
-        pathinfo: true,
-        filename: '[name].[hash].js',
+        filename: '[name].js',
         publicPath: '/'
     },
 
@@ -39,11 +39,10 @@ const baseConfig = {
     devtool: 'inline-cheap-module-source-map',
 
     plugins: [
-        new CleanWebpackPlugin({
-            cleanOnceBeforeBuildPatterns: []
-        }),
+        // TODO: Clean is running twice and causing issues in the initial load... 
+        //new CleanWebpackPlugin(),
         new ProgressBarPlugin({
-            format: 'Build > [:bar] ' + chalk.cyan.bold(':percent') + ' (:elapsed seconds)',
+            format: 'Build [:bar] ' + chalk.cyan.bold(':percent') + ' (:elapsed seconds)',
             clear: false
         })
     ]

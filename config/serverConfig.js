@@ -1,6 +1,5 @@
 const path = require("path");
 const srcPath = path.resolve(__dirname, "..");
-const NodemonPlugin = require('nodemon-webpack-plugin');
 
 const serverConfig = {
   name: 'server',

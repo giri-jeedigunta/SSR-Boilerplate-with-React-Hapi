@@ -8,7 +8,7 @@ export default req => {
         <html lang="en">
         <head>
             <meta charSet="UTF-8" />
-            <title>Boilerplate - SSR</title>
+            <title>Boilerplate - SSR with HapiJS, React</title>
         </head>
         <body>
             <div id="app">

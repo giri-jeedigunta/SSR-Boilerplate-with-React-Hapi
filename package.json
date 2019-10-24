@@ -6,11 +6,14 @@
     "clean": "rimraf ./dist",
     "start": "better-npm-run start:dev",
     "build:dev": "webpack --watch --config=config/webpack.config.js --progress",
-    "server:dev": "nodemon --watch dist -e js --exec \"node dist/server*.js\""
+    "server:dev": "nodemon --watch dist --watch config -e js --exec \"node dist/server*.js\""
   },
   "betterScripts": {
     "start:dev": {
-      "command": "yarn build:dev & yarn server:dev"
+      "command": "yarn build:dev & yarn server:dev", 
+      "env": {
+        "NODE_ENV": "production"
+      }
     }
   },
   "keywords": [],

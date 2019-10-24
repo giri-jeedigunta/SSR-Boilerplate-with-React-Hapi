@@ -12,6 +12,7 @@ const init = async () => {
   await server.route(routes);
   await server.start();
 
+  console.log("\n ... ");
   console.log("\n SERVER up and running on... ");
   console.dir(server.info);
 };
