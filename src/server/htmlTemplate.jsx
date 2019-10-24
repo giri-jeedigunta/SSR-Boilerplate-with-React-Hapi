@@ -16,7 +16,7 @@ export default req => {
                     <Routes />
                 </StaticRouter>
             </div>
-            {bodyScriptsList.map(path => path && <script key={ path } src={ path } />)}
+            {bodyScriptsList.map(scriptPath => scriptPath && <script key={ scriptPath } src={ scriptPath } />)}
         </body>
         </html>
     )                        

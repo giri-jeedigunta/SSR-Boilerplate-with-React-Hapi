@@ -2,7 +2,6 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const chalk = require('chalk');
 const path = require("path");
 const srcPath = path.resolve(__dirname, "..");
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const baseConfig = {
     module: {
@@ -40,7 +39,9 @@ const baseConfig = {
     devtool: 'inline-cheap-module-source-map',
 
     plugins: [
-        new CleanWebpackPlugin(),
+        new CleanWebpackPlugin({
+            cleanOnceBeforeBuildPatterns: []
+        }),
         new ProgressBarPlugin({
             format: 'Build > [:bar] ' + chalk.cyan.bold(':percent') + ' (:elapsed seconds)',
             clear: false

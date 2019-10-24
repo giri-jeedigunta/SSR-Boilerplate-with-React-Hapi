@@ -3,4 +3,7 @@ const baseConfig = require('./baseConfig.js');
 const serverConfig = require('./serverConfig.js');
 const clientConfig = require('./clientConfig.js');
 
-module.exports = merge(baseConfig, serverConfig, clientConfig);
+const serverBundle = merge(baseConfig, serverConfig);
+const clientBundle = merge(baseConfig, clientConfig);
+
+module.exports = [clientBundle, serverBundle];

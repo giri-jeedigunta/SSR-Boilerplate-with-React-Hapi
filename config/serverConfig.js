@@ -1,7 +1,6 @@
-
-const webpackNodeExternals = require('webpack-node-externals');
 const path = require("path");
 const srcPath = path.resolve(__dirname, "..");
+const NodemonPlugin = require('nodemon-webpack-plugin');
 
 const serverConfig = {
   name: 'server',
@@ -12,10 +11,7 @@ const serverConfig = {
   //Root file of the server application
   entry: {
     server: srcPath + "/src/server/index.js",
-  },
-
-  //Externals will inform webpack not to bundle any libraries exist inside the node_modules folder  
-  externals: [webpackNodeExternals()]
+  }
 };
 
 module.exports = serverConfig;

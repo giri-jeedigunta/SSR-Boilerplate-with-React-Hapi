@@ -5,7 +5,7 @@
   "scripts": {
     "clean": "rimraf ./dist",
     "start": "better-npm-run start:dev",
-    "build:dev": "webpack --config=config/webpack.config.js --watch --progress",
+    "build:dev": "webpack --watch --config=config/webpack.config.js --progress",
     "server:dev": "nodemon --watch dist -e js --exec \"node dist/server*.js\""
   },
   "betterScripts": {
@@ -31,12 +31,12 @@
     "eslint": "^6.5.1",
     "fs": "^0.0.1-security",
     "nodemon": "^1.19.3",
+    "nodemon-webpack-plugin": "^4.1.1",
     "progress-bar-webpack-plugin": "^1.12.1",
     "react-router-dom": "^5.1.2",
     "webpack": "^4.41.1",
     "webpack-cli": "^3.3.9",
-    "webpack-merge": "^4.2.2",
-    "webpack-node-externals": "^1.7.2"
+    "webpack-merge": "^4.2.2"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.3",
