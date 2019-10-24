@@ -6,6 +6,8 @@ A simple, minimal and light-weight Server Side Rendering(SSR) boilerplate with R
 
 **HapiJS** Go through this detailed comparassion on Express vs Hapi https://stackoverflow.com/questions/30469767/how-do-express-and-hapi-compare-to-each-other
 
+Clone / Download the repo run the below: 
+
 
 ```
 yarn install
