@@ -3,16 +3,15 @@
   "version": "1.0.0",
   "description": "React SSR Boilerplate",
   "scripts": {
-    "clean": "rimraf ./dist",
+    "clean": "rimraf dist",
     "start": "better-npm-run start:dev",
-    "build:dev": "webpack --watch --config=config/webpack.config.js --progress",
-    "server:dev": "nodemon --watch dist --watch config -e js --exec \"node dist/server*.js\""
+    "build:dev": "webpack --watch --config=config/webpack.config.js --progress"
   },
   "betterScripts": {
     "start:dev": {
-      "command": "yarn build:dev & yarn server:dev", 
+      "command": "yarn clean && yarn build:dev", 
       "env": {
-        "NODE_ENV": "production"
+        "NODE_ENV": "development"
       }
     }
   },
@@ -29,11 +28,9 @@
     "babel-loader": "^8.0.6",
     "better-npm-run": "^0.1.1",
     "chalk": "^2.4.2",
-    "clean-webpack-plugin": "^3.0.0",
     "core-js": "3",
     "eslint": "^6.5.1",
     "fs": "^0.0.1-security",
-    "nodemon": "^1.19.3",
     "nodemon-webpack-plugin": "^4.1.1",
     "progress-bar-webpack-plugin": "^1.12.1",
     "react-router-dom": "^5.1.2",
@@ -44,7 +41,6 @@
   "dependencies": {
     "@babel/runtime": "^7.6.3",
     "@hapi/hapi": "^18.4.0",
-    "npm-run-all": "^4.1.5",
     "react": "^16.10.2",
     "react-dom": "^16.10.2"
   }
