@@ -1,0 +1,11 @@
+version: "3.1"
+
+services:
+  reactssr:
+    build:
+      context: .
+    ports:
+      - "9001:3001"
+    volumes:
+      - .:/www/app
+
