@@ -16,7 +16,7 @@ yarn install
 yarn start
 
 ```
-**Docker containarization** Since some of the methods has been used in which is not going to support in lower node version, to up and running the application with higher node v12.x docker file has been introduced. To manage the local development and up and running the server through docker container, some steps to be followed below. 
+**Docker containerization** Since some of the methods has been used in which is not going to support in lower node version, to up and running the application with higher node v12.x docker file has been introduced. To manage the local development and up and running the server through docker container, some steps to be followed below. 
 
 ```
 after the above step done,
