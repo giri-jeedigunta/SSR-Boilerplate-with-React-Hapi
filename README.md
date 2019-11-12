@@ -17,7 +17,6 @@ Clone / download the repo and run:
 yarn install
 
 yarn start
-
 ```
 
 View the app from http://localhost:3000/
@@ -43,7 +42,6 @@ Webpack generates / updates the JS bundles for client and server side whenever c
 
 ```
 docker-compose up
-
 ```
 This application will run at port 9001 in host machine. Update docker-compose.yml to change the default port or any other settings.
 
