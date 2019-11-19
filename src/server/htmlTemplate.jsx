@@ -1,7 +1,7 @@
 import React from "react";
 import { StaticRouter } from 'react-router-dom';
 import Routes from '../client/routes';
-import bodyScriptsList from './utils';
+import { clientScripts, vendorScripts } from './utils';
 
 export default req => {
     return (
@@ -15,8 +15,9 @@ export default req => {
                 <StaticRouter location={req.path} context={{}}>
                     <Routes />
                 </StaticRouter>
-            </div>
-            {bodyScriptsList.map(scriptPath => scriptPath && <script key={ scriptPath } src={ scriptPath } />)}
+                </div>
+            {vendorScripts.map(scriptPath => scriptPath && <script key={ scriptPath } src={ scriptPath } />)}
+            {clientScripts.map(scriptPath => scriptPath && <script key={ scriptPath } src={ scriptPath } />)}
         </body>
         </html>
     )                        

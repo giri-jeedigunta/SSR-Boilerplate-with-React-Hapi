@@ -4,6 +4,7 @@ const path = require("path");
 const srcPath = path.resolve(__dirname, "..");
 const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpack = require('webpack');
 
 
 const clientConfig = {
@@ -21,10 +22,20 @@ const clientConfig = {
 
   optimization: {
     minimizer: [new TerserPlugin({ /* additional options here */ })],
+    splitChunks: {
+      cacheGroups: {
+        nodeVendors: {
+          test: /[\\/]node_modules[\\/]/, 
+          chunks: "initial", 
+          name: "vendor"
+        }
+      }
+    }    
   },  
 
   plugins: [
     new CleanWebpackPlugin(), 
+    new webpack.HashedModuleIdsPlugin(), // so that file hashes don't change unexpectedly
     new ProgressBarPlugin({
         format: 'Build [:bar] ' + chalk.cyan.bold(':percent') + ' (:elapsed seconds)',
         clear: false

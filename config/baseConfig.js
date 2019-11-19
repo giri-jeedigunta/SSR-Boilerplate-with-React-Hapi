@@ -24,6 +24,7 @@ const baseConfig = {
         filename: (chunkData) => {
             return chunkData.chunk.name === 'client' ? '[name].[hash].js': '[name]/index.js';
         },
+        chunkFilename: '[name].[hash].js', 
         publicPath: '/'
     },
 

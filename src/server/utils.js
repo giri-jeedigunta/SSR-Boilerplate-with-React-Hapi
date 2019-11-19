@@ -1,7 +1,15 @@
 const fs = require('fs');
 
-const bodyScriptsList = fs.readdirSync('dist', { withFileTypes: true })
+const clientScripts = fs.readdirSync('dist', { withFileTypes: true })
     .filter(item => !item.isDirectory())
     .map(item => (/client/).test(item.name) && item.name);
 
-export default bodyScriptsList;
+    
+const vendorScripts = fs.readdirSync('dist', { withFileTypes: true })
+    .filter(item => !item.isDirectory())
+    .map(item => (/vendor/).test(item.name) && item.name);
+
+export {
+    clientScripts,
+    vendorScripts
+};
