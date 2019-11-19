@@ -13,6 +13,8 @@ const serverConfig = {
     server: srcPath + "/src/server/index.js",
   }, 
 
+  devtool: 'inline-cheap-module-source-map',
+
   plugins: [
     new NodemonPlugin({
       script: srcPath + '/dist/server', 
