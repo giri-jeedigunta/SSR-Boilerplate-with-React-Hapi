@@ -1,6 +1,6 @@
 import React from "react";
-import { StaticRouter } from 'react-router-dom';
-import Routes from '../client/routes';
+import { StaticRouter, Route } from 'react-router-dom';
+import routesList from '../client/routes';
 import { clientScripts, vendorScripts } from './utils';
 
 export default req => {
@@ -13,12 +13,12 @@ export default req => {
         <body>
             <div id="app">
                 <StaticRouter location={req.path} context={{}}>
-                    <Routes />
+                  {routesList.map(route => <Route key={route.path} {...route} />)}
                 </StaticRouter>
                 </div>
             {vendorScripts.map(scriptPath => scriptPath && <script key={ scriptPath } src={ scriptPath } />)}
             {clientScripts.map(scriptPath => scriptPath && <script key={ scriptPath } src={ scriptPath } />)}
         </body>
         </html>
-    )                        
+    )
 };

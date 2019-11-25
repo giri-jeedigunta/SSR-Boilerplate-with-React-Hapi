@@ -1,13 +1,10 @@
 const fs = require('fs');
 
 const clientScripts = fs.readdirSync('dist', { withFileTypes: true })
-    .filter(item => !item.isDirectory())
-    .map(item => (/client/).test(item.name) && item.name);
+    .filter(item => item && (/client/).test(item));
 
-    
 const vendorScripts = fs.readdirSync('dist', { withFileTypes: true })
-    .filter(item => !item.isDirectory())
-    .map(item => (/vendor/).test(item.name) && item.name);
+    .filter(item => item && (/vendor/).test(item));
 
 export {
     clientScripts,

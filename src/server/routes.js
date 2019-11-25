@@ -1,6 +1,6 @@
 import reactHandler from './reactHandler';
 export default [
-  // Static Files 
+  // Static Files
   {
     path: "/{param*}",
     method: "GET",
@@ -17,6 +17,11 @@ export default [
   {
     method: "GET",
     path: "/",
+    handler: reactHandler
+  },
+  {
+    method: "GET",
+    path: "/test",
     handler: reactHandler
   }
 ];
