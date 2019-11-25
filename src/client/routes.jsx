@@ -3,13 +3,13 @@ import Test from './components/Test';
 
 const routesList = [
   {
+    path: '/test',
+    component: Test
+  },
+  {
     path: '/',
     exact: true,
     component: Home
-  },
-  {
-    path: '/test',
-    component: Test
   }
 ];
 

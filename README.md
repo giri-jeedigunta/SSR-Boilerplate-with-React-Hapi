@@ -35,7 +35,10 @@ There are many Frameworks like [Next.js](https://nextjs.org/features/server-side
 ### Bundling / Splitting with Webpack
 Webpack generates / updates the JS bundles for client and server side whenever changes are detected. Refer the **config** folder and **package.json** to understand the webpack setup.
 
-### Docker Container
+### Routing
+Routing config is available to add routes to the app. Use **routes.jsx** file to add your routes out of the box.
+
+### Docker
 - Docker needs to be installed and running
 - Install the latest version of Node v12+ is preferred
 - Use terminal and run the below 
