@@ -23,5 +23,10 @@ export default [
     method: "GET",
     path: "/test",
     handler: reactHandler
+  },
+  {
+    method: "GET",
+    path: "/todo",
+    handler: reactHandler
   }
 ];
