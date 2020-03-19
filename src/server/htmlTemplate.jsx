@@ -2,6 +2,7 @@ import React from "react";
 import { StaticRouter, Route } from "react-router-dom";
 import routesList from "../client/routes";
 import { clientScripts, vendorScripts } from "./utils";
+import "../assets/css/normalize.css";
 
 export default req => {
   return (
@@ -20,11 +21,11 @@ export default req => {
         </div>
         {vendorScripts.map(
           scriptPath =>
-            scriptPath && <script key={scriptPath} src={scriptPath} />
+            scriptPath && <script key={scriptPath.name} src={scriptPath.name} />
         )}
         {clientScripts.map(
           scriptPath =>
-            scriptPath && <script key={scriptPath} src={scriptPath} />
+            scriptPath && <script key={scriptPath.name} src={scriptPath.name} />
         )}
       </body>
     </html>
