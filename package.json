@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.6.3",
-    "@hapi/hapi": "^18.4.0",
+    "@hapi/hapi": "^19.1.1",
     "react": "^16.10.2",
     "react-dom": "^16.10.2"
   }
